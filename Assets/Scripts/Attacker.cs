@@ -2,10 +2,15 @@
 
 public class Attacker : MonoBehaviour
 {
-    [Range(0f, 3f)] [SerializeField] float walkSpeed = 1f;
+    float movementSpeed = 1f;
 
     void Update()
     {
-        transform.Translate(Vector2.left * Time.deltaTime * walkSpeed);
+        transform.Translate(Vector2.left * Time.deltaTime * movementSpeed);
+    }
+
+    public void SetMovementSpeed(float speed)
+    {
+        movementSpeed = speed;
     }
 }
