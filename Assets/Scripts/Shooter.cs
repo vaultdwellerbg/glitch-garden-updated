@@ -3,10 +3,12 @@
 public class Shooter : MonoBehaviour
 {
 	[SerializeField] GameObject projectilePrefab;
+	[SerializeField] float projectileSpeed = 1f;
 
 	public void Fire()
 	{
 		var gunObject = transform.Find("Gun");
-		Instantiate(projectilePrefab, gunObject.transform.position, Quaternion.identity);
+		GameObject projectile = Instantiate(projectilePrefab, gunObject.transform.position, Quaternion.identity);
+		projectile.GetComponent<Projectile>().SetMovementSpeed(projectileSpeed);
 	}
 }
