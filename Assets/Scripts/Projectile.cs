@@ -3,6 +3,7 @@
 public class Projectile : MonoBehaviour
 {
 	private float movementSpeed = 1f;
+	private float damage = 50f;
 
 	private void Update()
 	{
@@ -12,5 +13,19 @@ public class Projectile : MonoBehaviour
 	public void SetMovementSpeed(float value)
 	{
 		movementSpeed = value;
+	}
+
+	public void SetDamage(float value)
+	{
+		damage = value;
+	}
+
+	private void OnTriggerEnter2D(Collider2D collider)
+	{
+		var colliderHealth = collider.gameObject.GetComponent<Health>();
+		if (colliderHealth != null)
+		{
+			colliderHealth.DealDamage(damage);
+		}
 	}
 }
