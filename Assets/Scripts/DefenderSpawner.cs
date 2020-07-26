@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour
 {
@@ -17,7 +15,15 @@ public class DefenderSpawner : MonoBehaviour
 		Vector2 clickPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 		Vector2 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
 
-		return worldPos;
+		return SnapToGrid(worldPos);
+	}
+
+	private Vector2 SnapToGrid(Vector2 rawPos)
+	{
+		float gridX = Mathf.RoundToInt(rawPos.x);
+		float gridY = Mathf.RoundToInt(rawPos.y);
+
+		return new Vector2(gridX, gridY);
 	}
 
 	private void SpawnDefender(Vector2 position)
