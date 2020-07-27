@@ -2,7 +2,15 @@
 
 public class DefenderButton : MonoBehaviour
 {
+	[SerializeField] Defender defenderPrefab;
+
 	private void OnMouseDown()
+	{
+		SetActive();
+		FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPrefab);
+	}
+
+	private void SetActive()
 	{
 		var defenderButtons = FindObjectsOfType<DefenderButton>();
 		foreach (DefenderButton button in defenderButtons)

@@ -2,12 +2,17 @@
 
 public class DefenderSpawner : MonoBehaviour
 {
-	[SerializeField] GameObject defenderPrefab;
+	Defender defenderPrefab;
 
 	private void OnMouseDown()
 	{
 		var mousePos = GetSquareClicked();
 		SpawnDefender(mousePos);
+	}
+
+	public void SetSelectedDefender(Defender value)
+	{
+		defenderPrefab = value;
 	}
 
 	private Vector2 GetSquareClicked()
