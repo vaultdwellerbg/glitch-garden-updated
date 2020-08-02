@@ -9,7 +9,7 @@ public class Shooter : MonoBehaviour
 
 	public void Fire()
 	{
-		var gunObject = transform.Find("Gun");
+		var gunObject = transform.Find("Body").Find("Gun");
 		GameObject projectile = Instantiate(prefab, gunObject.transform.position, Quaternion.identity);
 		var projectileScript = projectile.GetComponent<Projectile>();
 		projectileScript.SetMovementSpeed(speed);
