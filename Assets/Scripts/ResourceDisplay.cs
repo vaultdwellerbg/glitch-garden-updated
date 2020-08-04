@@ -30,6 +30,11 @@ public class ResourceDisplay : MonoBehaviour
 		}
 	}
 
+	public int GetGold()
+	{
+		return gold;
+	}
+
 	private void UpdateDispay()
 	{
 		starText.text = gold.ToString();

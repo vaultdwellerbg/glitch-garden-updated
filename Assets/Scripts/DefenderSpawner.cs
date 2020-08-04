@@ -2,17 +2,33 @@
 
 public class DefenderSpawner : MonoBehaviour
 {
-	Defender defenderPrefab;
+	private Defender defenderPrefab;
+	private ResourceDisplay resourseDisplay;
+
+	private void Start()
+	{
+		resourseDisplay = FindObjectOfType<ResourceDisplay>();
+	}
 
 	private void OnMouseDown()
 	{
 		var mousePos = GetSquareClicked();
-		SpawnDefender(mousePos);
+		AttemptToPlaceSelectedDefender(mousePos);
 	}
 
 	public void SetSelectedDefender(Defender value)
 	{
 		defenderPrefab = value;
+	}
+
+	private void AttemptToPlaceSelectedDefender(Vector2 pos)
+	{
+		var defenderCost = defenderPrefab.GetCost();
+		if (resourseDisplay.GetGold() >= defenderCost)
+		{
+			SpawnDefender(pos);
+			resourseDisplay.SpendGold(defenderCost);
+		}
 	}
 
 	private Vector2 GetSquareClicked()
