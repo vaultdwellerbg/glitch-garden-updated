@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
@@ -9,22 +8,17 @@ public class Shooter : MonoBehaviour
 	[SerializeField] float damage = 50f;
 
 	private AttackerSpawner laneAttackerSpawner;
+	private Animator animator;
 
 	private void Start()
 	{
 		SetLaneAttackerSpawner();
+		animator = GetComponent<Animator>();
 	}
 
 	private void Update()
 	{
-		if (AttackerInLane())
-		{
-			Debug.Log("Shoot");
-		}
-		else
-		{
-			Debug.Log("Wait");
-		}
+		animator.SetBool("IsAttacking", AttackerInLane());
 	}
 
 	public void Fire()
