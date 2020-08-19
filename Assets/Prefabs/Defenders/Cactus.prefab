@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba55c177d4b56d44afe48051ff0c3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8826147841177993733, guid: a4909fe292f87ac4ea88fd5b8dbe7a2c, type: 3}
+  prefab: {fileID: 6354874427717682412, guid: 2997b5dbb618a5343bd30fe26d3877dd, type: 3}
   speed: 2
   damage: 50
 --- !u!61 &3954578915056830731
