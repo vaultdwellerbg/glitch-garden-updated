@@ -516,7 +516,7 @@ Transform:
   m_Children:
   - {fileID: 1485968074}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823500669
 GameObject:
@@ -546,7 +546,7 @@ Transform:
   m_GameObject: {fileID: 823500669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.10669994, y: -0.009000001, z: 1}
-  m_LocalScale: {x: 0.0786015, y: 0.80387896, z: 0.7074135}
+  m_LocalScale: {x: 0.0962161, y: 0.9840282, z: 0.86594486}
   m_Children: []
   m_Father: {fileID: 1485968074}
   m_RootOrder: 0
@@ -593,7 +593,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -3494450213032369641, guid: 039ad4f7707f9a043b2800a7bcabd33e,
     type: 3}
   m_Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.256, y: 1.008}
@@ -619,7 +619,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.256, y: 1.008}
+    oldSize: {x: 0.98125, y: 0.7875}
     newSize: {x: 1.256, y: 1.008}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -756,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 4974236347842724008, guid: 677d7c3dc96a99045bf253ba28d07617,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4974236347842724008, guid: 677d7c3dc96a99045bf253ba28d07617,
         type: 3}
@@ -1046,7 +1046,7 @@ PrefabInstance:
     - target: {fileID: 1464122775463564753, guid: f0c1ca006ce11954e83d44204511e977,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1464122775463564753, guid: f0c1ca006ce11954e83d44204511e977,
         type: 3}
@@ -1103,7 +1103,7 @@ Transform:
   - {fileID: 602230192}
   - {fileID: 1971344731}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1645800813
 GameObject:
@@ -1216,7 +1216,7 @@ PrefabInstance:
     - target: {fileID: 5397184470186085558, guid: 0cec3bb0ad963284c992073e1ffb690c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5397184470186085558, guid: 0cec3bb0ad963284c992073e1ffb690c,
         type: 3}
@@ -1270,7 +1270,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
