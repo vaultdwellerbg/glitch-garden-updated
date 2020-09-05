@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] float spashScreenDuration = 3f;
+    [SerializeField] float gameOverTransitionDuration = 3f;
 
     int currentSceneIndex;
 
@@ -22,10 +23,27 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
+
+    public void LoadGameOverScreenWithDelay()
+    {
+        StartCoroutine("LoadGameOverScreen");
+    }
+
     private IEnumerator LoadStartScreen()
     {
         yield return new WaitForSeconds(spashScreenDuration);
 
         LoadNextScene();
+    }
+
+    private IEnumerator LoadGameOverScreen()
+    {
+        yield return new WaitForSeconds(gameOverTransitionDuration);
+
+        SceneManager.LoadScene("GameOverScreen");
     }
 }
