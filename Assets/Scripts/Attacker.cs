@@ -7,6 +7,11 @@ public class Attacker : MonoBehaviour
     GameObject currentTarget;
     Animator animator;
 
+	private void Awake()
+	{
+        FindObjectOfType<LevelController>().AttackerSpawned();
+	}
+
 	private void Start()
 	{
         animator = GetComponent<Animator>();
@@ -17,6 +22,11 @@ public class Attacker : MonoBehaviour
         transform.Translate(Vector2.left * Time.deltaTime * movementSpeed);
         UpdateAnimationState();
     }
+
+	private void OnDestroy()
+	{
+        FindObjectOfType<LevelController>().AttackerDestroyed();
+	}
 
 	public void SetMovementSpeed(float speed)
     {

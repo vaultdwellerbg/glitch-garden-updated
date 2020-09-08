@@ -8,12 +8,17 @@ public class GameTimer : MonoBehaviour
     [Tooltip("The level timer in seconds.")]
     [SerializeField] float levelTime = 10f;
 
+	private bool levelFinished = false;
+
 	private void Update()
 	{
+		if (levelFinished) return;
+
 		bool timerFinished = Time.timeSinceLevelLoad >= levelTime;
 		if (timerFinished)
 		{
-			Debug.Log("Level timer finished.");
+			FindObjectOfType<LevelController>().LevelTimerFinished();
+			levelFinished = true;
 			return;
 		}
 
