@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spashScreenDuration: 3
+  gameOverTransitionDuration: 3
+  nextLevelTransitionDuration: 4

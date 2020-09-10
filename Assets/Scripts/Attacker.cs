@@ -25,7 +25,11 @@ public class Attacker : MonoBehaviour
 
 	private void OnDestroy()
 	{
-        FindObjectOfType<LevelController>().AttackerDestroyed();
+        var levelController = FindObjectOfType<LevelController>();
+        if (levelController)
+        {
+            levelController.AttackerDestroyed();
+        }
 	}
 
 	public void SetMovementSpeed(float speed)

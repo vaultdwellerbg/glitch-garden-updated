@@ -6,6 +6,7 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField] float spashScreenDuration = 3f;
     [SerializeField] float gameOverTransitionDuration = 3f;
+    [SerializeField] float nextLevelTransitionDuration = 3f;
 
     int currentSceneIndex;
 
@@ -33,6 +34,11 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine("LoadGameOverScreen");
     }
 
+    public void LevelCompleted()
+    {
+        StartCoroutine("LoadNextSceneWithDelay");
+    }
+
     private IEnumerator LoadStartScreen()
     {
         yield return new WaitForSeconds(spashScreenDuration);
@@ -45,5 +51,12 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(gameOverTransitionDuration);
 
         SceneManager.LoadScene("GameOverScreen");
+    }
+
+    private IEnumerator LoadNextSceneWithDelay()
+    {
+        yield return new WaitForSeconds(nextLevelTransitionDuration);
+
+        LoadNextScene();
     }
 }
