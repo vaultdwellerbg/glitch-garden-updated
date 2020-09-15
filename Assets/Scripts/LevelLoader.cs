@@ -26,7 +26,14 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadStartScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("StartScreen");
+    }
+
+    public void ReloadCurrentScene()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 
     public void LoadGameOverScreenWithDelay()

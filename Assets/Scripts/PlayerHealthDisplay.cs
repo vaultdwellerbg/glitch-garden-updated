@@ -15,15 +15,16 @@ public class PlayerHealthDisplay : MonoBehaviour
 
     public void TakeDamage(int value)
     {
+        health -= value;
+
         if (health >= value)
         {
-            health -= value;
             UpdateDispay();
         }
 
         if (health == 0)
         {
-            FindObjectOfType<LevelLoader>().LoadGameOverScreenWithDelay();
+            FindObjectOfType<LevelController>().ShowGameOverPanelWithDelay();
         }
     }
 
