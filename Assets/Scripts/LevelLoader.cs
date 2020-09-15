@@ -46,6 +46,11 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine("LoadNextSceneWithDelay");
     }
 
+    public void QuitGame()
+	{
+        Application.Quit();
+	}
+
     private IEnumerator LoadStartScreen()
     {
         yield return new WaitForSeconds(spashScreenDuration);
