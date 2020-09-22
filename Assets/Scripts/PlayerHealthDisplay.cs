@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class PlayerHealthDisplay : MonoBehaviour
 {
-    [SerializeField] int health = 5;
-
+    int health;
     Text healthText;
 
     private void Start()
     {
+        health = FindObjectOfType<DifficultyController>().GetHealth();
         healthText = GetComponent<Text>();
         UpdateDispay();
     }
