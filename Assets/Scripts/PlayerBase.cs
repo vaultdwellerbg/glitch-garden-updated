@@ -9,7 +9,7 @@ public class PlayerBase : MonoBehaviour
 		health = FindObjectOfType<PlayerHealthDisplay>();
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D collidedWith)
 	{
 		if (health)
 		{
@@ -19,5 +19,6 @@ public class PlayerBase : MonoBehaviour
 		{
 			Debug.LogError("PlayerHealthDisplay missing!");
 		}
+		Destroy(collidedWith.gameObject);
 	}
 }
