@@ -2,12 +2,25 @@
 
 public class DefenderSpawner : MonoBehaviour
 {
+	const string DEFENDER_PARENT_NAME = "Defenders";
+
 	private Defender defenderPrefab;
 	private ResourceDisplay resourseDisplay;
+	private GameObject defenderParent;
 
 	private void Start()
 	{
 		resourseDisplay = FindObjectOfType<ResourceDisplay>();
+		CreateDefenderParent();
+	}
+
+	private void CreateDefenderParent()
+	{
+		defenderParent = GameObject.Find(DEFENDER_PARENT_NAME);
+		if (!defenderParent)
+		{
+			defenderParent = new GameObject(DEFENDER_PARENT_NAME);
+		}
 	}
 
 	private void OnMouseDown()
@@ -49,6 +62,7 @@ public class DefenderSpawner : MonoBehaviour
 
 	private void SpawnDefender(Vector2 position)
 	{
-		Instantiate(defenderPrefab, position, Quaternion.identity);
+		Defender newDefender = Instantiate(defenderPrefab, position, Quaternion.identity) as Defender;
+		newDefender.transform.parent = defenderParent.transform;
 	}
 }

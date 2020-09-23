@@ -7,11 +7,15 @@ public class Shooter : MonoBehaviour
 	[SerializeField] float speed = 1f;
 	[SerializeField] float damage = 50f;
 
+	const string PROJECTILES_PARENT_NAME = "Projectiles";
+
 	private AttackerSpawner laneAttackerSpawner;
 	private Animator animator;
+	private GameObject projectilesParent;
 
 	private void Start()
 	{
+		CreateProjectilesParent();
 		SetLaneAttackerSpawner();
 		animator = GetComponent<Animator>();
 	}
@@ -25,9 +29,19 @@ public class Shooter : MonoBehaviour
 	{
 		var gunObject = transform.Find("Body").Find("Gun");
 		GameObject projectile = Instantiate(prefab, gunObject.transform.position, Quaternion.identity);
+		projectile.transform.parent = projectilesParent.transform;
 		var projectileScript = projectile.GetComponent<Projectile>();
 		projectileScript.SetMovementSpeed(speed);
 		projectileScript.SetDamage(damage);
+	}
+
+	private void CreateProjectilesParent()
+	{
+		projectilesParent = GameObject.Find(PROJECTILES_PARENT_NAME);
+		if (!projectilesParent)
+		{
+			projectilesParent = new GameObject(PROJECTILES_PARENT_NAME);
+		}
 	}
 
 	private void SetLaneAttackerSpawner()
