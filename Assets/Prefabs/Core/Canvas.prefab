@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9c0914dbfba90409e4a5137c492e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 1000
+  gold: 100
 --- !u!1 &545034932
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd3dfbea7e5b4c4a9ecb608fffbfcab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
 --- !u!1 &1648442825
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1705c7b391d3e4fb416015dcb751cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 10
 --- !u!1 &2065110031
 GameObject:
   m_ObjectHideFlags: 0
