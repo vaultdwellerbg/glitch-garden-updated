@@ -1,13 +1,33 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class DefenderButton : MonoBehaviour
 {
 	[SerializeField] Defender defenderPrefab;
 
+	private void Start()
+	{
+		DisplayCost();
+	}
+
 	private void OnMouseDown()
 	{
 		SetActive();
 		FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPrefab);
+	}
+
+	private void DisplayCost()
+	{
+		Text costLabel = GetComponentInChildren<Text>();
+		if (costLabel)
+		{
+			costLabel.text = defenderPrefab.GetCost().ToString();
+		}
+		else 
+		{
+			Debug.LogError(name + " is missing cost text object!");
+		}
 	}
 
 	private void SetActive()
