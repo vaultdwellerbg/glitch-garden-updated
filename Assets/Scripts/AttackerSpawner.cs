@@ -9,13 +9,15 @@ public class AttackerSpawner : MonoBehaviour
 
     bool active = true;
 
-    // Start is called before the first frame update
     IEnumerator Start()
     {
         while (active)
         {
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
-            SpawnAttacker();
+            if (active)
+            {
+                SpawnAttacker();
+            }
         }
     }
 
