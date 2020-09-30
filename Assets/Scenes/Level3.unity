@@ -1067,10 +1067,20 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2889173720795939050, guid: e17f870f0136704499971712a533920e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2889173722215315960, guid: e17f870f0136704499971712a533920e,
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889173722215315965, guid: e17f870f0136704499971712a533920e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2889173722353179694, guid: e17f870f0136704499971712a533920e,
         type: 3}
